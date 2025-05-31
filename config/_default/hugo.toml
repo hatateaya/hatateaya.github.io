@@ -15,4 +15,5 @@ enableRobotsTXT = true
         disableSlide = false
         disableListing = true
     [params.posts]
+		noIndent = true
 	    sfdefault = true

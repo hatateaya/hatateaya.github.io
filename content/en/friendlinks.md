@@ -2,7 +2,7 @@
 title: "友链列表"
 date: 2024-11-20T12:00:00+08:00
 draft: false
-description: " "
+description: "是朋友们！"
 type: post
 ---
 
@@ -18,4 +18,4 @@ link: <https://blog.yunyi.beiyan.us>
 
 - Estla 山前
 
-很厉害的山前姐姐。link: <https://estela.moe/>
+是很厉害的姐姐！link: <https://estela.moe/>
