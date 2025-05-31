@@ -10,4 +10,4 @@ type: post
 
 账号注册方法：[联系本人](/pin/) 
 
-此外的，这边的新联系方式： <postmaster@ganlanc.at> and `@root:ganlanc.ai`
+此外的，这边的新联系方式： <postmaster@ganlanc.at> and `@root:ganlanc.at`
