@@ -8,9 +8,8 @@ type: post
 
 本站托管地址：
 
+- My Server: <https://ganlanc.at/>
 - Github Page: <https://hatateaya.github.io/>
-- Cloudflare Page: <https://hatateaya.page.dev/>
-- Vercel: <https://hatateaya.vercel.app/>
 
 在 GitHub Page 站点上还有一些内容，如下：
 
