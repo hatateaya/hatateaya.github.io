@@ -10,7 +10,7 @@ type: post
 
 于是就有了自己的服务器和域名
 
-现在本站也在自己的 GanlanC.at 上可用！
+现在本站也在自己的 [GanlanC.at](https://ganlanc.at/) 上可用！
 
 并且趁着喜气给博客换了个好看点的主题
 

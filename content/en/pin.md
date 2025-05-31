@@ -12,4 +12,4 @@ Twitter: <https://twitter.com/amcje1>
 
 Telegram: <https://t.me/+447801295837>
 
-Matrix: @root:ganlanc.at and/or @hatateaya:fedora.im
+Matrix: `@root:ganlanc.at` and/or `@hatateaya:fedora.im`
