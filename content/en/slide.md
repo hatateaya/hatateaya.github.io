@@ -1,7 +1,7 @@
 ---
 type: 'slide'
 title: 'ABOUT ME'
-cover: 'https://raw.githubusercontent.com/foxihd/hugo-et-hd/master/static/svg/flowlines/17.svg'
+cover: '/17.svg'
 ---
 
 你好呀！👋

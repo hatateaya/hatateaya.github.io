@@ -1,7 +1,7 @@
 ---
 type: 'slide'
 title: 'CONTACT ME'
-cover: 'https://raw.githubusercontent.com/foxihd/hugo-et-hd/master/static/svg/flowlines/16.svg'
+cover: '/16.svg'
 ---
 
 E-Mail: <amcjedhfeh@gmail.com>
