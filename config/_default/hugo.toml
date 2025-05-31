@@ -1,0 +1,19 @@
+baseURL = 'https://ganlanc.at'
+title = "雨山橄榄菜的博客"
+theme = 'brewm'
+enableRobotsTXT = true
+[services.rss]
+    limit = -1
+[params]
+    title = "雨山橄榄菜的博客！"
+    description = "一只猫。"
+    copyright = "CC BY-SA 4.0 International"
+    [params.author]
+        name = '雨山 橄榄菜'
+        email = 'amcjedhfeh@gmail.com'
+    [params.home]
+        disableSlide = false
+        disableListing = true
+    [params.posts]
+        noIndent = true
+        sfdefault = true

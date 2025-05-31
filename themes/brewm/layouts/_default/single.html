@@ -1,0 +1,157 @@
+{{- define "head" }}
+    {{- /*
+
+        MathML render engine    */}}
+    {{- if or .Params.Math site.Params.Math }}
+        {{ partialCached "head/js/katex.html" . }}
+    {{- else if or .Params.MathJax site.Params.MathJax }}
+        {{ partialCached "head/js/mathjax.html" . }}
+    {{- end }}
+    {{- /*
+
+        Verbatim Style */}}
+    {{- with findRE `class="chroma"` .Content 1 }}
+        {{ partialCached "head/css/verbatim.html" $ }}
+    {{- end }}
+    {{- /*
+
+        use Highlight.js */}}
+    {{- if .Params.Hljs -}}
+        {{ partialCached "head/css/verbatim.html" . }}
+        {{ partialCached "head/js/hljs.html" . }}
+    {{- end }}
+    {{- /*
+
+        QRCode */}}
+    {{/*  {{ partialCached "head/js/qrcode.html" . }}  */}}
+{{- end }}
+
+{{- define "main" }}
+    {{- $isPost := eq .Params.type (or "post" "articles") }}
+    {{- $sf := or site.Params.Posts.sfdefault .Params.sfdefault }}
+    <article id="main-article" class="pagewidth {{ if or (not $isPost) $sf }}sf{{ else }}rm{{ end }}"
+        role="document" aria-labelledby="title"
+        {{- if ne (lower .Params.type) (or "post" "articles") }}
+            data-pagefind-ignore="all"
+        {{- else }}
+            data-pagefind-body
+        {{- end }}>
+        <header aria-labelledby="title">
+            {{- $series := .GetTerms "series" }}
+            {{- $stage := .GetTerms "stage" }}
+            {{ if or $series $stage }}
+            <span id="has-stage" class="section-title">
+                {{- with $series }}
+                    {{- range . | first 1 }}
+                        <a href="{{ .Permalink }}" id="series" aria-label="{{ i18n "series" 1 }}: {{ .Title }}">
+                            <span>{{ .Title }}</span>
+                        </a>
+                    {{- end }}
+                {{- end }}
+                {{- with $stage }}
+                    {{- range . | first 1 }}
+                        {{- if .Params.emoji }}
+                            <span class="emoji emoji--stage">{{ .Params.emoji }}</span>
+                        {{- else }}
+                            <img src="{{ or .Params.indicator .Params.icon .Params.badge }}" class="stage-indicator">
+                        {{- end }}
+                        <a href="{{ .Permalink }}" id="stage" aria-label="{{ i18n "stage" 1 }}: {{ .Title }}">
+                            <span>{{ .Title }}</span>
+                        </a>
+                    {{- end }}
+                {{- end }}
+            </span>
+            {{ end }}
+            {{ partial "page/title.html" . }}
+            {{- if $isPost }}
+            <div id="doc-author" class="textsw author">
+                {{- $author := cond .Params.author .Params.author site.Params.Author.name }}
+                {{- $authors := .GetTerms "author" }}
+                {{- $notMultiAuthor := eq (len $authors) 1 }}
+                {{- if $authors }}
+                    {{- if $notMultiAuthor }}
+                        {{- range $authors }}
+                            {{ $flair := .Params.flair }}
+                            {{- if $flair }}
+                                {{- $displayPicture := partial "page/cover.html" (dict "page" .) }}
+                                <a id="avatar" href="{{ .Permalink }}" aria-label="{{ .LinkTitle }}">
+                                    <img src="{{ $displayPicture }}" alt="{{ .LinkTitle }}"/>
+                                </a>
+                            {{- end }}
+                            <a href="{{ .Permalink }}"
+                                {{- if $flair }}
+                                    class="has-desc"
+                                    aria-label="{{ .LinkTitle }}"
+                                    aria-description="{{ $flair }}"
+                                {{- end }}>
+                                {{- .LinkTitle -}}
+                            </a>
+                        {{- end }}
+                    {{- else }}
+                        {{ partial "terms.html" (dict "taxonomy" "author" "class" "delimiter" "page" .) }}
+                    {{- end }}
+                {{- else if $author -}}
+                    <span>{{ $author }}</span>
+                {{- end }}
+            </div>
+            {{ partial "page/timestamp.html" . }}
+            {{- end }}
+        </header>
+        {{- with .Params.toc }}
+            {{ partial "nav.html" (dict "navID" "TableOfContents" "page" $) }}
+        {{- end }}
+        {{ partial "page/audio.html" . }}
+        <section aria-labelledby="Title" id="content" data-bionRead-safe {{- with .Params.secnum }} class="secnum"{{- end }}>
+            {{- if or .Params.task site.Params.Post.enableCheckbox }}
+                {{ replace .Content "disabled=" "" | safeHTML }}
+            {{- else }}
+                {{ .Content }}
+            {{- end }}
+        </section>
+        {{- if $isPost }}
+            <footer>
+                {{ partial "post/tagged.html" . }}
+            </footer>
+        {{- end }}
+    </article>
+    <hr class="hide" style="margin: 1in 0;">
+    <div id="contentinfo" class="pagewidth" role="contentinfo" data-pagefind-ignore="all">
+        {{- if $isPost }}
+            {{- if or .Params.related site.Params.posts.related }}
+                {{ partial "post/related.html" . }}
+            {{- end }}
+            {{- if or .Params.colophon site.Params.posts.colophon }}
+                {{ partial "post/colophon.html" . }}
+            {{- end }}
+            {{- if not site.Params.posts.disableHistory }}
+                {{ partial "post/history.html" . }}
+            {{- end }}
+            {{ partial "post/contribute.html" . }}
+        {{- end }}
+        {{- if site.Params.posts.share }}
+            {{ partial "nav.html" (dict "navID" "share" "page" .) }}
+        {{- end }}
+    </div>
+    {{ if not site.Params.comments.disabled -}}
+        {{- $toot := or .Params.toot  .Params.mstd .Params.mastodon }}
+        {{- $bsky := or .Params.skeet .Params.bsky .Params.bluesky }}
+        {{- $giscus := isset .Site.Params "giscus" }}
+        {{ if or $toot $bsky $giscus -}}
+            {{ if not (or $toot $bsky) -}}
+                {{ if ne .Params.comments false }}
+                    {{ partial "giscus.html" . }}
+                {{ end }}
+            {{- else }}
+                {{ partial "fediverse.html" (dict "toot" $toot "bsky" $bsky ) }}
+            {{- end }}
+        {{- end }}
+    {{- end }}
+{{- end }}
+
+{{- define "post" }}
+    {{ "<!-- [post] single.html -->" | safeHTML }}
+    {{- /*
+
+        bionRead Snapshot */}}
+    <div id="bionReadSnapshot" hidden></div>
+{{- end }}

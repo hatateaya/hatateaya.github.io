@@ -1,0 +1,88 @@
+{{ "<!-- header.html -->" | safeHTML }}
+<header class="pagewidth">
+    <div id="background-header" class="background" aria-hidden="true">
+        <div class="grain" hidden></div>
+    </div>
+    {{/*
+
+        skipper/bypass block [KB] */}}
+    <nav aria-label="{{ i18n "bypass" }}">
+        {{- $content := "content" }}
+        {{- if not .IsPage }}
+            {{- $content = "list-posts" }}
+        {{- end }}
+        <a id="to-content" class="underline" href="{{ printf "#%s" $content }}" aria-label="{{ i18n "toContent" }}">
+            <span>{{ i18n "toContent" }}</span>
+            <kbd class="key" aria-hidden="true">c</kbd>
+            <span class="screening" aria-hidden="true"></span>
+        </a>
+    </nav>
+    {{/*
+
+        site banner  */}}
+    {{- $logoMark := site.Params.logo.logoMark }}
+    {{- $logoType := site.Params.logo.logoType }}
+    {{- $siteTitle := or site.Title site.Params.Title }}
+    {{- if or $logoType $logoMark }}
+        <a id="logo" href="{{ absLangURL "" }}" aria-label="{{ $siteTitle }}">
+            {{- with site.Params.logo.logoMarkDark }}
+                <img id="logomark--dark" src="{{ . }}" alt="{{ $siteTitle }}" />
+            {{- end }}
+            {{- with $logoMark }}
+                <img id="logomark" src="{{ . }}" alt="{{ $siteTitle }}" />
+            {{- end }}
+            {{- if or $logoType (not $logoMark) }}
+                {{ partialCached "header/logotype.html" . }}
+            {{- end }}
+        </a>
+    {{- end }}
+    {{/*
+
+        top nav */}}
+    <details class="presentation" id="top-nav">
+        <summary class="on-deck">
+            <span class="t t2">{{ i18n "nav" }}</span>
+            <span class="menu-icon" role="presentation"></span>
+        </summary>
+        <nav tabindex="-1" aria-label="{{ i18n "top-nav" }}">
+            {{ partial "menu.html" (dict "menuID" "main" "open" "open" "page" .) }}
+            {{ if site.Params.search.enable }}{{ partialCached "search.html" . }}{{ end }}
+            {{ partial "menu.html" (dict "menuID" "more" "page" .) }}
+            {{ partialCached "i18n.html" . }}
+        </nav>
+        <div id="top-nav-screen" class="screening js-cpn" role="presentation" aria-hidden="true"></div>
+    </details>
+</header>
+{{- /*--------------------- end of header.html ---------------------*/}}
+
+{{- define "partials/main/header.html" -}}
+    {{ "<!-- main/header.html -->" | safeHTML }}
+    {{- if not .IsHome }}
+        <header class="pagewidth">
+            {{/*
+
+                action menu  */}}
+            {{ partial "nav/menu.html" . }}
+            {{/*
+
+                breadcrumb */}}
+            {{- $minVersion := index ( split hugo.Version "." ) 1 }}
+            {{- if lt $minVersion 109 }}
+                {{ partial "legacy/breadcrumb.html" . }}
+            {{- else }}
+                {{ partial "nav.html" ( dict "navID" "breadcrumb" "page" . )}}
+            {{- end }}
+        </header>
+    {{- end }}
+{{- end }}
+
+{{- define "partials/header/logotype.html" -}}
+    {{ "<!-- logotype.html -->" | safeHTML }}
+    {{- $siteTitle := or site.Title site.Params.Title }}
+    {{- with $siteTitle -}}
+        {{- $estimatedWidth := printf "%dpt" (mul (len . ) 28) -}}
+        <svg id="logotype" xmlns="http://www.w3.org/2000/svg" version="1.1" width="{{ $estimatedWidth }}" aria-label="{{ . }}">
+            <text id="logotype__text" y="19.5pt" x="0">{{ . }}</text>
+        </svg>
+    {{- end }}
+{{- end }}
