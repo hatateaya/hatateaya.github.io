@@ -1,0 +1,140 @@
+/* this style is used inline in fediverse.js */
+
+#comments noscript {
+    margin: var(--medskip) 0;
+}
+
+#discussion-starter {
+    margin-bottom: var(--medskip);
+}
+
+#discussion-starter > footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1em;
+}
+
+.fediverse-comment {
+    margin: 1rem 0 1rem calc(var(--mul) * var(--indent));
+    border: 1pt solid #fff4;
+    border-left: 2pt solid var(--ac);
+    background: #80808008;
+    padding: 1rem 1rem 1ex;
+    box-shadow: 0 0.5pt 1pt 0 var(--g18s);
+    overflow: auto;
+}
+
+.fediverse-comment.bsky {
+    --ac: #1185fe;
+}
+
+.fediverse-comment.mstd {
+    --ac: #563acc;
+}
+
+.fediverse-comment > .author > img{
+    margin-right: 12pt;
+}
+
+.fediverse-comment .content {
+    margin-left: 4rem;
+    line-height: calc(var(--baselineStretch) * 1.272);
+}
+
+.fediverse-comment .par a {
+    max-width: 100%;
+    vertical-align: bottom;
+    white-space: break-spaces;
+}
+
+.fediverse-comment > footer {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+    margin-left: 3.5rem;
+    line-height: 1.272;
+    white-space: nowrap;
+}
+
+.fediverse-comment > footer .stat {
+    display: inline-flex;
+    flex-shrink: 0;
+    gap: 5pt;
+}
+
+.attachments {
+    display: flex;
+    overflow: auto;
+}
+
+.attachments > * {
+    flex-shrink: 0;
+    width: 100%;
+    height: auto;
+}
+
+.attachments img {
+    width: 100%;
+    height: auto;
+}
+
+.stat > * {
+    display: inline-flex;
+    align-items: center;
+    padding: 2pt;
+    color: var(--mid);
+    gap: 2pt;
+}
+
+.stat > *::before {
+    vertical-align: text-top;
+    font-family: "base-ui";
+}
+
+.stat > * > span {
+    font-size: 0.8em;
+}
+
+a.replies.active,
+a.reblogs.active {
+    color: var(--ac);
+}
+
+a.favourites.active {
+    color: var(--i3i);
+}
+
+.fediverse-comment .date {
+    margin-left: auto;
+    padding-left: 1rem;
+    color: var(--mid);
+    font-size: calc(10pt * var(--fontScale));
+}
+
+@media only screen and (max-width: 960px) {
+    .fediverse-comment .content,
+    .fediverse-comment > footer {
+        margin-left: 0;
+    }
+
+}
+
+@media print {
+    .fediverse-comment {
+        position: relative;
+        background: none;
+        padding-bottom: 0;
+    }
+
+    .fediverse-comment .date {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    #discussion-starter,
+    .fediverse-comment .stat {
+        display: none !important;
+    }
+}

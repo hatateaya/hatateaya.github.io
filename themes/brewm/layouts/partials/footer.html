@@ -1,0 +1,63 @@
+{{ "<!-- footer.html -->" | safeHTML }}
+<footer id="body-footer" class="pagewidth" style="display: none;">
+    <div id="background-footer" class="background hide" role="presentation" aria-hidden="true">
+        <div class="grain" hidden></div>
+    </div>
+    <div id="focusMode"></div>
+    {{ partialCached "a11y.html" . }}
+    {{ "<!-- [top] bypass block -->" | safeHTML }}
+    <nav aria-label="{{ i18n "bypass" }}">
+        <a id="to-top" href="#top" title="{{ i18n "toTop" }}" accesskey="c" aria-keyshortcuts="c" aria-label="{{ i18n "toTop" }}">
+            <kbd class="key" aria-hidden="true">c</kbd>
+        </a>
+    </nav>
+</footer>
+
+{{- define "partials/main/footer.html" -}}
+    {{ "<!-- main/footer.html -->" | safeHTML }}
+    {{- $page := . }}
+    {{- $stat := site.Params.coffeeStat }}
+    {{- $menu := site.Menus.footer }}
+    {{- $iterateEntry := where .Site.RegularPages "Type" "footer" }}
+    {{ with $iterateEntry -}}
+        <hr class="hide">
+        <footer id="main-footer">
+            <div class="{{ if or $stat $menu (index . 1) }}column column--multicols{{ end }} pagewidth" style="--multicols: 2">
+                {{- $counter := 1 }}
+                {{- with index . 0 -}}
+                    <div id="main-footer-primary"
+                        {{- if .Params.Span }} class="span-all" {{ end }}
+                        aria-labelledby="footer-1">
+                        {{- with .Title -}}
+                            <strong id="footer-1" class="section-title">{{ . }}</strong>
+                        {{- end }}
+                        {{ .Content }}
+                    </div>
+                {{- end }}
+                <div id="main-footer-secondary" {{ if or $stat (index . 2) }} class="column" style="--col: 15rem"{{ end }}>
+                    {{- range after 1 . -}}
+                        {{- $counter := add 1 $counter }}
+                        <div
+                            {{- if .Params.Span }} class="span-all" {{ end }}
+                            aria-labelledby="footer-{{ $counter }}">
+                            {{- with .Title -}}
+                                <strong id="footer-{{ $counter }}" class="section-title">{{ . }}</strong>
+                            {{- end }}
+                            {{ .Content }}
+                        </div>
+                    {{- end }}
+                    {{- if $stat }}
+                        {{- $coffeeStat := partialCached "coffeeStat.html" . }}
+                        {{- with $coffeeStat }}
+                        <div id="coffee-counter">
+                            <strong class="section-title">{{ i18n "coffeeStat" }}</strong>
+                            <p>{{ i18n "coffeeCount" }}{{ printf "%d %s" . (i18n "cup" . | lower) }}{{ i18n "coffeeCountPost" }}</p>
+                        </div>
+                    {{- end }}
+                    {{- end }}                    
+                    {{ partial "menu.html" ( dict "page" $page "menuID" "footer") }}
+                </div>
+            </div>
+        </footer>
+    {{- end }}
+{{- end }}

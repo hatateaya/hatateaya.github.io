@@ -1,0 +1,18 @@
+baseURL = 'https://ganlanc.at'
+title = 'GANLAN CAT'
+theme = 'brewm'
+enableRobotsTXT = true
+[services.rss]
+    limit = -1
+[params]
+    title = "橄榄菜"
+    description = "某只猫"
+    copyright = "CC-BY-SA 3.0"
+    [params.author]
+        name = '橄榄菜'
+        email = 'amcjedhfeh@gmail.com'
+    [params.home]
+        disableSlide = false
+        disableListing = true
+    [params.posts]
+	    sfdefault = true

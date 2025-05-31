@@ -1,0 +1,13 @@
+---
+type: 'slide'
+title: 'CONTACT ME'
+cover: 'https://raw.githubusercontent.com/foxihd/hugo-et-hd/master/static/svg/flowlines/16.svg'
+---
+
+E-Mail: <amcjedhfeh@gmail.com>
+
+GitHub: <https://github.com/hatateaya>
+
+Twitter: <https://twitter.com/amcje1>
+
+Telegram: <https://t.me/+447801295837>
