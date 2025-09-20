@@ -7,11 +7,12 @@ cat > "$output_file" << EOL
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>文件列表</title>
+    <title>橄榄猫实用资源镜像</title>
 </head>
 <body>
 <div class="container">
-    <h1>文件列表</h1>
+    <h1>橄榄猫实用资源镜像</h1>
+    <h2>Ganlan Cat Useful Resources Mirror</h2>
     <ul>
 EOL
 
