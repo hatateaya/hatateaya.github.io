@@ -67,7 +67,7 @@
                 "172.19.0.1/30",
                 "2001:0470:f9da:fdfa::1/64"
             ],
-            "mtu": 9000,
+            "mtu": 1380,
             "sniff_override_destination": true,
             "stack": "system",
             "strict_route": true,
@@ -77,18 +77,6 @@
             "domain_strategy": "prefer_ipv4",
             "listen": "127.0.0.1",
             "listen_port": 2333,
-            "sniff": true,
-            "sniff_override_destination": true,
-            "tag": "socks-in",
-            "type": "socks",
-            "users": [
-
-            ]
-        },
-        {
-            "domain_strategy": "prefer_ipv4",
-            "listen": "127.0.0.1",
-            "listen_port": 2334,
             "sniff": true,
             "sniff_override_destination": true,
             "tag": "mixed-in",
@@ -103,8 +91,8 @@
             "type": "selector",
             "tag": "节点选择",
             "outbounds": [
-                "direct",
-                "ganlanc.at"
+                "ganlanc.at",
+                "direct"
             ]
         },
         {
