@@ -9,3 +9,5 @@ wget http://ganlanc.at/subscribe
 sudo mv /etc/sing-box/config.json /etc/sing-box/config.json.bak
 sudo mv ./subscribe /etc/sing-box/config.json
 sudo systemctl enable sing-box --now
+cd ..
+rm -r tmp-singbox-inst
