@@ -2,34 +2,25 @@
 
 shopt -s globstar
 
-output_file="index.html"
+output_file="../../content/en/mirrors.md"
 
 cat > "$output_file" << EOL
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-<meta charset="UTF-8">
-<title>Ganlan Cat Useful Resources Mirror</title>
-</head>
-<body>
-<div class="container">
-<h2>Ganlan Cat Useful Resources Mirror</h2>
-<ul>
+---
+title: "橄榄菜的实用资源镜像站！"
+date: 2025-09-20
+draft: false
+description: "如题"
+type: post
+---
+
 EOL
 
 for file in **/*; do
     if [ -f "$file" ] && [ "$file" != "$(basename "$0")" ] && [ "$file" != "$output_file" ]; then
-        echo "<li><a href=\"$file\" download>$file</a></li>" >> "$output_file"
+        echo "- [$file](/mirrors/$file)" >> "$output_file"
     fi
 done
 
-cat >> "$output_file" << EOL
-</ul>
-</div>
-</body>
-</html>
-EOL
-
-cd ../..
-hugo -d /usr/share/caddy
-cd static/mirrors
+#cd ../..
+#hugo -d /usr/share/caddy
+#cd static/mirrors
