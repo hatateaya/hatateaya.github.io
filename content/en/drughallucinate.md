@@ -2,7 +2,7 @@
 title: "产生由意识塑形可交流有触感的幻觉体的药物体验报告"
 date: 2024-10-24T12:00:00+08:00
 draft: false
-description: " "
+description: "原发于某论坛的一篇报告推荐文章..."
 type: post
 ---
 

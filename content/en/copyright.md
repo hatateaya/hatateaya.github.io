@@ -2,7 +2,7 @@
 title: "对版权、专利等知识私有化事物的一些探讨"
 date: 2023-12-07T12:00:00+08:00
 draft: false
-description: " "
+description: "几年前写的一篇文章..."
 type: post
 ---
 

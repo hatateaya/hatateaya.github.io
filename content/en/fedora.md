@@ -2,9 +2,10 @@
 title: "Fedora 41 GNOME 安装配置笔记"
 date: 2024-11-01T12:00:00+08:00
 draft: false
-description: " "
+description: "是可参考的一个安装配置笔记..."
 type: post
 ---
+
 - 换源更新：
    - `sudo sed -e 's|^metalink=|#metalink=|g'          -e 's|^#baseurl=http://download.example/pub/fedora/linux|baseurl=https://mirrors.ustc.edu.cn/fedora|g'          -i.bak          /etc/yum.repos.d/fedora.repo          /etc/yum.repos.d/fedora-updates.repo`
    - `sudo dnf update`

@@ -2,7 +2,7 @@
 title: "素晴日：一款多视角描绘高程度人格分裂和精神分裂的视觉小说"
 date: 2024-10-25T12:00:00+08:00
 draft: false
-description: " "
+description: "原发于某论坛的一个游戏推荐文章..."
 type: post
 ---
 
