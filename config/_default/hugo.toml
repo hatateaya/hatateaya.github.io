@@ -1,19 +1,19 @@
 baseURL = 'https://ganlanc.at'
-title = 'GANLAN CAT'
+title = "Ganlancat Ameyama's Blog"
 theme = 'brewm'
 enableRobotsTXT = true
 [services.rss]
     limit = -1
 [params]
-    title = "橄榄菜"
-    description = "某只猫"
-    copyright = "CC-BY-SA 3.0"
+    title = "Ganlancat Ameyama's Blog"
+    description = "An neko."
+    copyright = "CC BY-SA 4.0 International"
     [params.author]
-        name = '橄榄菜'
+        name = 'Ganlancat Ameyama'
         email = 'amcjedhfeh@gmail.com'
     [params.home]
         disableSlide = false
         disableListing = true
     [params.posts]
-		noIndent = true
-	    sfdefault = true
+        noIndent = true
+        sfdefault = true
