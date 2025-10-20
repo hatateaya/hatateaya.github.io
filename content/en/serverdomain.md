@@ -1,5 +1,5 @@
 ---
-title: "拥有了自己的服务器和域名！"
+title: "拥有了自己的服务器和域名"
 date: 2025-05-30
 draft: false
 description: "本站现同时在 ganlanc.at 上可用~"

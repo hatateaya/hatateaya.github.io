@@ -2,7 +2,7 @@
 title: "民族的历史：民族、国家、战争问题的杂谈第一部分"
 date: 2022-11-15T12:00:00+08:00
 draft: false
-description: " "
+description: "几年前写的一篇文章..."
 type: post
 ---
 
