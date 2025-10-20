@@ -4,12 +4,12 @@ title: 'CONTACT ME'
 cover: '/16.svg'
 ---
 
-E-Mail: <amcjedhfeh@gmail.com> and <postmaster@ganlanc.at>
+E-Mail: <amcjedhfeh@gmail.com>
 
 GitHub: <https://github.com/hatateaya>
 
 Twitter: <https://twitter.com/amcje1>
 
-Telegram: <https://t.me/+447801295837>
+Telegram: <https://t.me/ganlancat>
 
-Matrix: `@root:ganlanc.at> and `@hatateaya:fedora.im`
+Matrix: <https://matrix.to/#/@hatateaya:fedora.im>
