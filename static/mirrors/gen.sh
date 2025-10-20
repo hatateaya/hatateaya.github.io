@@ -21,6 +21,6 @@ for file in **/*; do
     fi
 done
 
-#cd ../..
-#hugo -d /usr/share/caddy
-#cd static/mirrors
+cd ../..
+hugo -d /usr/share/caddy
+cd static/mirrors
