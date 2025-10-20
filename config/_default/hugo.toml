@@ -1,15 +1,15 @@
 baseURL = 'https://ganlanc.at'
-title = "Ganlancat Ameyama's Blog"
+title = "雨山橄榄菜的博客"
 theme = 'brewm'
 enableRobotsTXT = true
 [services.rss]
     limit = -1
 [params]
-    title = "Ganlancat Ameyama's Blog"
-    description = "An neko."
+    title = "雨山橄榄菜的博客！"
+    description = "一只猫。"
     copyright = "CC BY-SA 4.0 International"
     [params.author]
-        name = 'Ganlancat Ameyama'
+        name = '雨山橄榄菜'
         email = 'amcjedhfeh@gmail.com'
     [params.home]
         disableSlide = false
