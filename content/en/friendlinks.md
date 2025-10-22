@@ -8,6 +8,10 @@ type: post
 
 若需添加友链可通过[关于页面](/aboutme/)中列出的本人联系方式联系或向[本博客的仓库](https://github.com/hatateaya/hatateaya.github.io/)开 issue 或发 PR
 
+- Ameyama Mio's Blog
+
+aka, anyneko. link: <https://aneko.moe>
+
 - 北雁云依
 
 暂无描述。link: <https://blog.yunyi.beiyan.us>
