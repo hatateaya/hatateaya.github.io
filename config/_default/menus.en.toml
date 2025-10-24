@@ -1,7 +1,7 @@
 [[main]]
 	name	=	"雨山橄榄菜的博客"
 	pageRef	=	'/'
-	weight	=	3
+	weight	=	1
 
 [[main]]
 	name	=	"友链"
@@ -11,4 +11,4 @@
 [[main]]
 	name	=	"关于"
 	pageref	=	'/aboutme'
-	weight	=	1
+	weight	=	3
