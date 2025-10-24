@@ -8,10 +8,14 @@ type: post
 
 [本人联系方式](/pin)
 
+---
+
 本站地址：
 
 - My Server: <https://ganlanc.at/>
 - Github Pages: <https://hatateaya.github.io/>
+
+---
 
 在 GitHub Pages 站点上还有一些内容，如下：
 
