@@ -6,6 +6,8 @@ description: "是本站的一些基本信息..."
 type: post
 ---
 
+[本人联系方式](/pin)
+
 本站地址：
 
 - My Server: <https://ganlanc.at/>
