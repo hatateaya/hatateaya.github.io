@@ -31,7 +31,3 @@ aka, anyneko. link: <https://aneko.moe>
 - 银杏树之下
 
 银杏树之下，躺着一位叫「雨山秋」的孩子。link: <https://aki.cat>
-
-- Yonah Cibani
-
-暂无描述。link: <https://artsreview.su/>
