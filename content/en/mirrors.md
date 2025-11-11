@@ -11,7 +11,7 @@ type: post
 - [textbooks/2019_精神病学开源教科书.pdf](https://ganlanc.at/mirrors/textbooks/2019_精神病学开源教科书.pdf)
 - [textbooks/250905-跨性别法律手册-版式.pdf](https://ganlanc.at/mirrors/textbooks/250905-跨性别法律手册-版式.pdf)
 - [textbooks/CCMD-3_中国精神障碍分类及诊断标准.pdf](https://ganlanc.at/mirrors/textbooks/CCMD-3_中国精神障碍分类及诊断标准.pdf)
-- [textbooks/DANGEROUS MINDS_Political_Psychiatry_in_China_Today_and_its_Origins_in_the_Mao_Era.pdf](https://ganlanc.at/mirrors/textbooks/DANGEROUS MINDS_Political_Psychiatry_in_China_Today_and_its_Origins_in_the_Mao_Era.pdf)
+- [textbooks/DANGEROUS_MINDS_Political_Psychiatry_in_China_Today_and_its_Origins_in_the_Mao_Era.pdf](https://ganlanc.at/mirrors/textbooks/DANGEROUS_MINDS_Political_Psychiatry_in_China_Today_and_its_Origins_in_the_Mao_Era.pdf)
 - [textbooks/Eloquent_JavaScript_4th.pdf](https://ganlanc.at/mirrors/textbooks/Eloquent_JavaScript_4th.pdf)
 - [textbooks/IndieHospital.txt](https://ganlanc.at/mirrors/textbooks/IndieHospital.txt)
 - [textbooks/Javascript_The_Definitive_Guide_7th.pdf](https://ganlanc.at/mirrors/textbooks/Javascript_The_Definitive_Guide_7th.pdf)
