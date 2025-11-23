@@ -9,6 +9,7 @@ type: post
 若需添加友链可通过[关于页面](/aboutme/)中列出的本人联系方式联系或向此博客[仓库](https://github.com/hatateaya/hatateaya.github.io/)开issue或发PR
 
 - A Moment's Rest
+
 AMoment 的 Blog。link: <https://a-moment096.github.io>
 
 - Ameyama Mio's Blog
