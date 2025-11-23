@@ -6,6 +6,8 @@ description: " "
 type: post
 ---
 
+[本人联系方式](/pin/)
+
 本站托管地址：
 
 - My Server: <https://ganlanc.at/>

@@ -2,3 +2,13 @@
 	name	=	"雨山橄榄菜的博客"
 	pageRef	=	'/'
 	weight	=	1
+
+[[main]]
+	name	=	"友链"
+	pageRef	=	'/friendlinks/'
+	weight	=	2
+
+[[main]]
+	name	=	"关于"
+	pageRef	=	'/aboutme/'
+	weight	=	3
