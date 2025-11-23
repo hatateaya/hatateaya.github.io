@@ -26,7 +26,11 @@ link: <https://blog.yunyi.beiyan.us>
 
 - Pivot of Winslow
 
-神圣的网络将你我连线在一起。link: <http://winsloweric.com>
+神圣的网络将你我连线在一起。link: <https://winsloweric.com>
+
+- Remik1r3n Blog
+
+Remi 的 Blog。link: <https://blog.remiki.ren>
 
 - Rikkaの小小窝
 
@@ -35,7 +39,3 @@ link: <https://blog.yunyi.beiyan.us>
 - 银杏树之下
 
 银杏树之下，躺着一位叫「雨山秋」的孩子。link: <https://aki.cat>
-
-- Yonah Cibani
-
-link: <https://artsreview.su/>
