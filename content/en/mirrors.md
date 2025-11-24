@@ -11,7 +11,6 @@ type: post
 - [geodata/geosite-category-ads-all.srs](https://ganlanc.at/mirrors/geodata/geosite-category-ads-all.srs)
 - [geodata/geosite-cn.srs](https://ganlanc.at/mirrors/geodata/geosite-cn.srs)
 - [linux/sing-box](https://ganlanc.at/mirrors/linux/sing-box)
-- [linux/sing-box.sh](https://ganlanc.at/mirrors/linux/sing-box.sh)
 - [linux/sing-box_1.12.8_linux_amd64.deb](https://ganlanc.at/mirrors/linux/sing-box_1.12.8_linux_amd64.deb)
 - [textbooks/2019_精神病学开源教科书.pdf](https://ganlanc.at/mirrors/textbooks/2019_精神病学开源教科书.pdf)
 - [textbooks/250905-跨性别法律手册-版式.pdf](https://ganlanc.at/mirrors/textbooks/250905-跨性别法律手册-版式.pdf)
