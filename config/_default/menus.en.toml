@@ -12,3 +12,8 @@
 	name	=	"关于"
 	pageRef	=	'/aboutme/'
 	weight	=	3
+
+[[main]]
+	name	=	"镜像站"
+	pageRef	=	'/mirrors/'
+	weight	=	4
