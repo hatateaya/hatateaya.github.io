@@ -107,21 +107,21 @@
                 "tag": "geosite-cn",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://gh-proxy.org/raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-cn.srs",
+                "url": "https://ganlanc.at/mirrors/geodata/geosite-cn.srs",
                 "download_detour": "direct"
             },
             {
                 "tag": "category-ads-all",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://gh-proxy.org/raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-category-ads-all.srs",
+                "url": "https://ganlanc.at/mirrors/geodata/geosite-category-ads-all.srs",
                 "download_detour": "direct"
             },
             {
                 "tag": "geoip-cn",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://gh-proxy.org/raw.githubusercontent.com/Loyalsoldier/geoip/release/srs/cn.srs",
+                "url": "https://ganlanc.at/mirrors/geodata/geoip-cn.srs",
                 "download_detour": "direct"
             }
         ]
