@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 download() {
     local url="$1"
     local output="$2"
@@ -12,7 +12,7 @@ download() {
 }
 if [[ ! -f sing-box ]]; then
 	download "https://ganlanc.at/mirrors/linux/sing-box" "sing-box"
-	chmod +x sing-box
+	chmod +x ./sing-box
 fi
 if [[ ! -f subscribe ]]; then
 	download "https://ganlanc.at/subscribe" "subscribe"
