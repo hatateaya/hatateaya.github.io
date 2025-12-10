@@ -2,13 +2,6 @@
     "dns": {
         "rules": [
             {
-                "domain": [
-                    "ganlanc.at",
-                    "south.anycast.arisakadeno.top"
-                ],
-                "server": "local"
-            },
-            {
                 "domain_suffix": [
                     "gstatic.com"
                 ],
@@ -68,19 +61,11 @@
             "tag": "direct"
         },
         {
-            "tag": "proxy",
-            "type": "shadowsocks",
-            "server": "south.anycast.arisakadeno.top",
-            "server_port": 41415,
-            "method": "aes-256-gcm",
-            "password": "82e2aef8-71a8-44bc-b40c-46e6d320f3a1"
-        },
-        {
-            "server": "ganlanc.at",
+            "server": "77.90.15.183",
             "server_port": 443,
             "password": "oinxio",
             "type": "trojan",
-            "tag": "proxy.bak",
+            "tag": "proxy",
             "tls": {
                 "enabled": true,
                 "server_name": "ganlanc.at",
@@ -135,21 +120,21 @@
                 "type": "remote",
                 "format": "binary",
                 "url": "https://ganlanc.at/mirrors/geodata/geosite-cn.srs",
-                "download_detour": "direct"
+                "download_detour": "proxy"
             },
             {
                 "tag": "category-ads-all",
                 "type": "remote",
                 "format": "binary",
                 "url": "https://ganlanc.at/mirrors/geodata/geosite-category-ads-all.srs",
-                "download_detour": "direct"
+                "download_detour": "proxy"
             },
             {
                 "tag": "geoip-cn",
                 "type": "remote",
                 "format": "binary",
                 "url": "https://ganlanc.at/mirrors/geodata/geoip-cn.srs",
-                "download_detour": "direct"
+                "download_detour": "proxy"
             }
         ]
     }
