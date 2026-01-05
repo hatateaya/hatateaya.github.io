@@ -24,10 +24,6 @@ link: <https://blog.yunyi.beiyan.us>
 
 是很厉害的姐姐！link: <https://estela.moe/>
 
-- 棉花糖
-
-是棉花糖老师！link: <https://misncandy.moe/>
-
 - Pivot of Winslow
 
 神圣的网络将你我连线在一起。link: <https://winsloweric.com>
