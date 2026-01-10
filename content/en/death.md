@@ -1,6 +1,6 @@
 ---
 title: "自杀未遂后日记"
-date: 2026-02-11T02:05:00+08:00
+date: 2026-01-11T02:05:00+08:00
 draft: false
 description: "如题目所言"
 type: post
