@@ -16,6 +16,10 @@ AMoment 的 Blog。link: <https://a-moment096.github.io>
 
 aka, anyneko. link: <https://aneko.moe>
 
+- Smilewei
+
+aka, 围笑 or 山猫猫. link <https://sssssmilewei.github.io>
+
 - 北雁云依
 
 link: <https://blog.yunyi.beiyan.us>
