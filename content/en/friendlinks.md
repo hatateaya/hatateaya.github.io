@@ -28,9 +28,9 @@ link: <https://blog.yunyi.beiyan.us>
 
 是很厉害的姐姐！link: <https://estela.moe/>
 
-- 棉花糖
+- Misncandy 棉花糖
 
-link: <https://misncandy.moe/>
+我们终将在没有黑暗的地方相遇. link: <https://misncandy.moe/>
 
 - Pivot of Winslow
 
