@@ -18,7 +18,13 @@
                     "category-ads-all"
                 ],
                 "server": "block"
-            }
+            },
+	    {
+	        "domain": [
+	            "p100.ganlanc.at"
+		],
+		"server": "local"
+	    }
         ],
         "servers": [
             {
@@ -86,6 +92,12 @@
             {
                 "protocol": "dns",
                 "action": "hijack-dns"
+            },
+	    {
+		"domain": [
+	            "p100.ganlanc.at"
+		],
+		"outbound": "direct"
             },
             {
                 "domain_suffix": [
