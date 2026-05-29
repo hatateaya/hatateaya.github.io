@@ -4,6 +4,9 @@
       "enabled": true
     }
   },
+  "log":{
+    "level": "info"
+  },
   "dns": {
     "servers": [
       {
@@ -40,7 +43,7 @@
       }
     ],
     "final": "remote",
-    "strategy": "prefer_ipv6"
+    "strategy": "ipv4_only"
   },
   "inbounds": [
     {
@@ -49,13 +52,12 @@
         "172.19.0.1/30",
         "2001:0470:f9da:fdfa::1/64"
       ],
-      "mtu": 9000,
       "auto_route": true,
       "strict_route": true,
-      "stack": "system",
-      "endpoint_independent_nat": true,
+      "stack": "gvisor",
+      "sniff": true,
       "sniff_override_destination": true,
-      "domain_strategy": "prefer_ipv6"
+      "sniff_timeout": "300ms"
     }
   ],
   "outbounds": [
@@ -64,18 +66,27 @@
       "tag": "direct"
     },
     {
-      "type": "trojan",
+      "type": "vless",
       "tag": "proxy",
-      "server": "2a14:7c0:1002:106d::",
+      "server": "31.25.89.147",
       "server_port": 443,
-      "password": "oinxio",
+      "uuid": "c193d7d0-511a-46d4-b4ac-f31b703062e3",
+      "network": [
+        "tcp",
+	"udp"
+      ],
+      "packet_encoding": "xudp",
       "tls": {
         "enabled": true,
-        "server_name": "ganlanc.at",
-        "min_version": "1.3",
+        "server_name": "www.microsoft.com",
 	"utls": {
           "enabled": true,
           "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "ST1RVWHDXnBFeU76sql9_Qz9YsTbmtJLv2_52GAvjDQ",
+          "short_id": "6a44698483dc"
         }
       }
     }
@@ -87,6 +98,16 @@
     },
     "rules": [
       {
+	"protocol": "icmp",
+	"outbound": "direct"
+      },
+      {
+	"protocol": "udp",
+	"port": [443],
+	"action": "reject",
+	"method": "drop"
+      },
+      {
         "action": "sniff"
       },
       {
@@ -95,12 +116,6 @@
       },
       {
         "ip_is_private": true,
-        "outbound": "direct"
-      },
-      {
-        "domain": [
-          "p100.ganlanc.at"
-        ],
         "outbound": "direct"
       },
       {

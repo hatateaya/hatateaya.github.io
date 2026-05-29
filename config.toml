@@ -1,0 +1,32 @@
+baseurl = "https://ganlanc.at"
+title = "橄榄菜的博客"
+theme = "charaka"
+copyright = "Copyright (C) HatateAya 2022-2026 & Licensed on CC-BY-SA 4.0 International"
+disqusShortname = "橄榄菜的博客"
+relativeURLs = true
+preserveTaxonomyNames = true
+
+[services.googleAnalytics]
+googleAnalytics = ""
+
+[author]
+  name = "橄榄菜"
+  homepage = "https://ganlanc.at"
+
+[params.highlight]
+  style = "zenburn"
+
+[params.share]
+  enabled = "false"
+
+[[params.social]]
+  url = "aboutme"
+  fa_icon = "fas fa-info"
+
+[[params.social]]
+  url = "https://github.com/hatateaya/"
+  fa_icon = "fab fa-github"
+
+[[params.social]]
+  url = "https://twitter.com/amcje1/"
+  fa_icon = "fab fa-twitter"

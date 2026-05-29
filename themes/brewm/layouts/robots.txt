@@ -1,5 +1,0 @@
-User-agent: *
-{{- range where (where .Pages ".Params.Headless" "eq" true ) "Sitemap.Disable" "eq" true }}
-Disallow: {{ .RelPermalink }}
-{{- end }}
-Sitemap: {{ "sitemap.xml" | absURL }}

@@ -1,4 +1,0 @@
----
-title: 'Fase'
-translationKey: stage
----

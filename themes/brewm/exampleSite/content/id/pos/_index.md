@@ -1,4 +1,0 @@
----
-title: "Pos"
-translationKey: post
----
