@@ -73,28 +73,18 @@
       "tag": "block"
     },
     {
-      "type": "vless",
+      "type": "trojan",
       "tag": "proxy",
-      "server": "31.25.89.147",
+      "server": "77.90.15.183",
       "server_port": 443,
-      "uuid": "c193d7d0-511a-46d4-b4ac-f31b703062e3",
-      "network": [
-        "tcp",
-        "udp"
-      ],
-      "packet_encoding": "xudp",
+      "network": "tcp",
+      "password": "GANLANCAT",
       "tls": {
         "enabled": true,
-        "server_name": "www.microsoft.com",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        },
-        "reality": {
-          "enabled": true,
-          "public_key": "ST1RVWHDXnBFeU76sql9_Qz9YsTbmtJLv2_52GAvjDQ",
-          "short_id": "6a44698483dc"
-        }
+        "server_name": "skrime.ganlanc.at"
+      },
+      "multiplex": {
+        "enabled": true
       }
     }
   ],
@@ -148,21 +138,21 @@
         "tag": "geosite-cn",
         "type": "remote",
         "format": "binary",
-        "url": "http://[2a14:7c0:1002:106d::]/mirrors/geodata/geosite-cn.srs",
+        "url": "https://testingcf.jsdelivr.net/gh/SagerNet/sing-geosite@rule-set/geosite-cn.srs",
         "download_detour": "direct"
       },
       {
         "tag": "category-ads-all",
         "type": "remote",
         "format": "binary",
-        "url": "http://[2a14:7c0:1002:106d::]/mirrors/geodata/geosite-category-ads-all.srs",
+        "url": "https://testingcf.jsdelivr.net/gh/SagerNet/sing-geosite@rule-set/geosite-category-ads-all.srs",
         "download_detour": "direct"
       },
       {
         "tag": "geoip-cn",
         "type": "remote",
         "format": "binary",
-        "url": "http://[2a14:7c0:1002:106d::]/mirrors/geodata/geoip-cn.srs",
+        "url": "https://testingcf.jsdelivr.net/gh/SagerNet/sing-geoip@rule-set/geoip-cn.srs",
         "download_detour": "direct"
       }
     ]

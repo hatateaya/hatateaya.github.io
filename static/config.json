@@ -65,7 +65,7 @@
     {
       "type": "anytls",
       "tag": "proxy",
-      "server": "ganlanc.at",
+      "server": "anytls.ganlanc.at",
       "server_port": 443,
       "password": "GANLANCAT",
       "idle_session_check_interval": "30s",
@@ -73,7 +73,8 @@
       "min_idle_session": 5,
       "tls": {
         "enabled": true,
-        "server_name": "ganlanc.at"
+        "server_name": "anytls.ganlanc.at",
+        "insecure": true
       }
     }
   ],
