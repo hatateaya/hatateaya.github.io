@@ -4,7 +4,7 @@
       "enabled": true
     }
   },
-  "log":{
+  "log": {
     "level": "info"
   },
   "dns": {
@@ -12,7 +12,7 @@
       {
         "tag": "remote",
         "type": "https",
-        "server": "1.1.1.1",
+        "server": "8.8.8.8",
         "detour": "proxy"
       },
       {
@@ -52,12 +52,9 @@
         "172.19.0.1/30",
         "2001:0470:f9da:fdfa::1/64"
       ],
-      "auto_route": true,
-      "strict_route": true,
       "stack": "gvisor",
-      "sniff": true,
-      "sniff_override_destination": true,
-      "sniff_timeout": "300ms"
+      "auto_route": true,
+      "strict_route": true
     }
   ],
   "outbounds": [
@@ -66,28 +63,17 @@
       "tag": "direct"
     },
     {
-      "type": "vless",
+      "type": "anytls",
       "tag": "proxy",
-      "server": "31.25.89.147",
+      "server": "ganlanc.at",
       "server_port": 443,
-      "uuid": "c193d7d0-511a-46d4-b4ac-f31b703062e3",
-      "network": [
-        "tcp",
-	"udp"
-      ],
-      "packet_encoding": "xudp",
+      "password": "GANLANCAT",
+      "idle_session_check_interval": "30s",
+      "idle_session_timeout": "30s",
+      "min_idle_session": 5,
       "tls": {
         "enabled": true,
-        "server_name": "www.microsoft.com",
-	"utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        },
-        "reality": {
-          "enabled": true,
-          "public_key": "ST1RVWHDXnBFeU76sql9_Qz9YsTbmtJLv2_52GAvjDQ",
-          "short_id": "6a44698483dc"
-        }
+        "server_name": "ganlanc.at"
       }
     }
   ],
@@ -98,14 +84,16 @@
     },
     "rules": [
       {
-	"protocol": "icmp",
-	"outbound": "direct"
+        "protocol": "icmp",
+        "outbound": "direct"
       },
       {
-	"protocol": "udp",
-	"port": [443],
-	"action": "reject",
-	"method": "drop"
+        "protocol": "udp",
+        "port": [
+          443
+        ],
+        "action": "reject",
+        "method": "drop"
       },
       {
         "action": "sniff"
@@ -146,24 +134,23 @@
         "tag": "geosite-cn",
         "type": "remote",
         "format": "binary",
-        "url": "http://[2a14:7c0:1002:106d::]/mirrors/geodata/geosite-cn.srs",
+        "url": "https://testingcf.jsdelivr.net/gh/SagerNet/sing-geosite@rule-set/geosite-cn.srs",
         "download_detour": "direct"
       },
       {
         "tag": "category-ads-all",
         "type": "remote",
         "format": "binary",
-        "url": "http://[2a14:7c0:1002:106d::]/mirrors/geodata/geosite-category-ads-all.srs",
+        "url": "https://testingcf.jsdelivr.net/gh/SagerNet/sing-geosite@rule-set/geosite-category-ads-all.srs",
         "download_detour": "direct"
       },
       {
         "tag": "geoip-cn",
         "type": "remote",
         "format": "binary",
-        "url": "http://[2a14:7c0:1002:106d::]/mirrors/geodata/geoip-cn.srs",
+        "url": "https://testingcf.jsdelivr.net/gh/SagerNet/sing-geoip@rule-set/geoip-cn.srs",
         "download_detour": "direct"
       }
     ]
   }
 }
-

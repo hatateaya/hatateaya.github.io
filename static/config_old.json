@@ -1,0 +1,170 @@
+{
+  "experimental": {
+    "cache_file": {
+      "enabled": true
+    }
+  },
+  "log": {
+    "level": "info"
+  },
+  "dns": {
+    "servers": [
+      {
+        "tag": "remote",
+        "address": "https://1.1.1.1/dns-query",
+        "detour": "proxy"
+      },
+      {
+        "tag": "local",
+        "address": "https://223.5.5.5/dns-query"
+      },
+      {
+        "tag": "dns-block",
+        "address": "rcode://refused"
+      }
+    ],
+    "rules": [
+      {
+        "domain_suffix": [
+          "gstatic.com"
+        ],
+        "server": "remote"
+      },
+      {
+        "rule_set": [
+          "geosite-cn"
+        ],
+        "server": "local"
+      },
+      {
+        "rule_set": [
+          "category-ads-all"
+        ],
+        "server": "dns-block"
+      }
+    ],
+    "final": "remote",
+    "strategy": "ipv4_only"
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "inet4_address": "172.19.0.1/30",
+      "inet6_address": "2001:0470:f9da:fdfa::1/64",
+      "auto_route": true,
+      "strict_route": true,
+      "stack": "gvisor",
+      "sniff": true,
+      "sniff_override_destination": true,
+      "sniff_timeout": "300ms"
+    }
+  ],
+  "outbounds": [
+    {
+      "type": "direct",
+      "tag": "direct"
+    },
+    {
+      "type": "dns",
+      "tag": "dns-out"
+    },
+    {
+      "type": "block",
+      "tag": "block"
+    },
+    {
+      "type": "vless",
+      "tag": "proxy",
+      "server": "31.25.89.147",
+      "server_port": 443,
+      "uuid": "c193d7d0-511a-46d4-b4ac-f31b703062e3",
+      "network": [
+        "tcp",
+        "udp"
+      ],
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.microsoft.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "ST1RVWHDXnBFeU76sql9_Qz9YsTbmtJLv2_52GAvjDQ",
+          "short_id": "6a44698483dc"
+        }
+      }
+    }
+  ],
+  "route": {
+    "auto_detect_interface": true,
+    "rules": [
+      {
+        "protocol": "icmp",
+        "outbound": "direct"
+      },
+      {
+        "protocol": "udp",
+        "port": [
+          443
+        ],
+        "outbound": "block"
+      },
+      {
+        "protocol": "dns",
+        "outbound": "dns-out"
+      },
+      {
+        "ip_is_private": true,
+        "outbound": "direct"
+      },
+      {
+        "domain_suffix": [
+          "gstatic.com"
+        ],
+        "outbound": "proxy"
+      },
+      {
+        "rule_set": [
+          "category-ads-all"
+        ],
+        "outbound": "block"
+      },
+      {
+        "rule_set": [
+          "geosite-cn",
+          "geoip-cn"
+        ],
+        "outbound": "direct"
+      },
+      {
+        "outbound": "proxy"
+      }
+    ],
+    "rule_set": [
+      {
+        "tag": "geosite-cn",
+        "type": "remote",
+        "format": "binary",
+        "url": "http://[2a14:7c0:1002:106d::]/mirrors/geodata/geosite-cn.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "category-ads-all",
+        "type": "remote",
+        "format": "binary",
+        "url": "http://[2a14:7c0:1002:106d::]/mirrors/geodata/geosite-category-ads-all.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "geoip-cn",
+        "type": "remote",
+        "format": "binary",
+        "url": "http://[2a14:7c0:1002:106d::]/mirrors/geodata/geoip-cn.srs",
+        "download_detour": "direct"
+      }
+    ]
+  }
+}

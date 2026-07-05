@@ -12,7 +12,7 @@ download() {
     fi
 }
 
-BASE_URL="http://[2a14:7c0:1002:106d::]"
+BASE_URL="https://ganlanc.at"
 FILES="config.json"
 
 if [ ! -f sing-box ]; then
@@ -26,5 +26,6 @@ for f in $FILES; do
     fi
 done
 
-sudo ip link delete tun0 2>/dev/null || true
 sudo ./sing-box run -c config.json
+
+read
