@@ -1,7 +1,7 @@
 baseurl = "https://ganlanc.at"
 title = "橄榄菜的博客"
 theme = "charaka"
-copyright = "Copyright (C) HatateAya 2022-2026 & Licensed on CC-BY-SA 4.0 International"
+copyright = "Copyright (C) Hatate Aya 2022-2026 & Licensed on CC-BY-SA 4.0 International"
 disqusShortname = "橄榄菜的博客"
 relativeURLs = true
 preserveTaxonomyNames = true
@@ -10,7 +10,7 @@ preserveTaxonomyNames = true
 googleAnalytics = ""
 
 [author]
-  name = "橄榄菜"
+  name = "橄榄菜 / 文羽立"
   homepage = "https://ganlanc.at"
 
 [params.highlight]
@@ -28,5 +28,5 @@ googleAnalytics = ""
   fa_icon = "fab fa-github"
 
 [[params.social]]
-  url = "https://twitter.com/amcje1/"
+  url = "https://twitter.com/ganlancat/"
   fa_icon = "fab fa-twitter"
