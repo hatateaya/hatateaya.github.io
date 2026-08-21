@@ -2,7 +2,7 @@
 
 shopt -s globstar
 
-output_file="/root/hatateaya.github.io/content/mirrors.md"
+output_file="/root/hatateaya.github.io/content/posts/mirrors.md"
 
 cd static/mirrors/
 
