@@ -30,3 +30,5 @@ googleAnalytics = ""
 [[params.social]]
   url = "https://twitter.com/ganlancat/"
   fa_icon = "fab fa-twitter"
+
+disqusShortname = ""

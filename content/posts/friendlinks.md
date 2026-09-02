@@ -47,3 +47,7 @@ Remi 的 Blog。link: <https://blog.remiki.ren>
 - 银杏树之下
 
 银杏树之下，躺着一位叫「雨山秋」的孩子。link: <https://aki.cat>
+
+- Ventus Uta
+
+8点、Classroom见. <https://www.ventusuta.com/>
