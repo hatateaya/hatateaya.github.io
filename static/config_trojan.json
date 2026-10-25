@@ -5,14 +5,15 @@
     }
   },
   "log": {
-    "level": "info"
+    "level": "info",
+    "timestamp": true
   },
   "dns": {
     "servers": [
       {
         "tag": "remote",
         "type": "https",
-        "server": "8.8.8.8",
+        "server": "1.1.1.1",
         "detour": "proxy"
       },
       {
@@ -42,8 +43,7 @@
         "rcode": "REFUSED"
       }
     ],
-    "final": "remote",
-    "strategy": "ipv4_only"
+    "final": "remote"
   },
   "inbounds": [
     {
@@ -67,14 +67,10 @@
       "tag": "proxy",
       "server": "77.90.15.183",
       "server_port": 443,
-      "network": "tcp",
       "password": "GANLANCAT",
       "tls": {
         "enabled": true,
-        "server_name": "skrime.ganlanc.at"
-      },
-      "multiplex": {
-        "enabled": true
+        "server_name": "ganlanc.at"
       }
     }
   ],
