@@ -1,0 +1,37 @@
+<section class="section px-0">
+  <div class="container columns">
+    <div class="column is-2"></div>
+    <nav class="level column px-0">
+      <div class="level-left">
+        <div class="level-item">
+          {{ if .Paginator.HasPrev }}
+          <a class="button is-rounded" href="{{ .Paginator.Prev.URL }}">
+            <i class="fa fa-angle-left"></i>
+            <span class="ml-2">Newer</span>
+          </a>
+          {{ else }}
+          <a class="button is-rounded" disabled>
+            <i class="fa fa-angle-left"></i>
+            <span class="ml-2">Newer</span>
+          </a>
+          {{ end }}
+        </div>
+      </div>
+      <div class="level-right">
+        <div class="level-item">
+          {{ if .Paginator.HasNext }}
+          <a class="button is-rounded" href="{{ .Paginator.Next.URL }}">
+            <span class="mr-2">Older</span> 
+            <i class="fa fa-angle-right"></i>
+          </a>
+          {{ else }}
+          <a class="button is-rounded" disabled>
+            <span class="mr-2">Older</span>
+            <i class="fa fa-angle-right"></i>
+          </a>
+          {{ end }}
+        </div>
+      </div>
+    </nav>
+  </div>
+</section>
