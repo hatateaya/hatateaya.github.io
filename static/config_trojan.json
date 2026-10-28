@@ -70,7 +70,8 @@
       "password": "GANLANCAT",
       "tls": {
         "enabled": true,
-        "server_name": "ganlanc.at"
+        "server_name": "ganlanc.at",
+        "insecure": true
       },
       "network": "tcp",
       "multiplex": {
