@@ -65,13 +65,12 @@
     {
       "type": "trojan",
       "tag": "proxy",
-      "server": "31.25.89.147",
+      "server": "ganlanc.at",
       "server_port": 443,
       "password": "GANLANCAT",
       "tls": {
         "enabled": true,
-        "server_name": "ganlanc.at",
-        "insecure": true
+        "server_name": "ganlanc.at"
       },
       "network": "tcp",
       "multiplex": {
