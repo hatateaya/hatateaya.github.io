@@ -1,13 +1,20 @@
 {
+  "log": {
+    "level": "info"
+  },
   "experimental": {
     "cache_file": {
-      "enabled": true
+      "enabled": true,
+      "path": "cache.db",
+      "store_dns": true
     }
   },
-  "log": {
-    "level": "info",
-    "timestamp": true
-  },
+  "http_clients": [
+    {
+      "tag": "rules-proxy",
+      "detour": "proxy"
+    }
+  ],
   "dns": {
     "servers": [
       {
@@ -24,23 +31,17 @@
     ],
     "rules": [
       {
-        "domain_suffix": [
-          "gstatic.com"
-        ],
+        "rule_set": ["category-ads-all"],
+        "action": "predefined",
+        "rcode": "REFUSED"
+      },
+      {
+        "domain_suffix": ["gstatic.com"],
         "server": "remote"
       },
       {
-        "rule_set": [
-          "geosite-cn"
-        ],
+        "rule_set": ["geosite-cn"],
         "server": "local"
-      },
-      {
-        "rule_set": [
-          "category-ads-all"
-        ],
-        "action": "predefined",
-        "rcode": "REFUSED"
       }
     ],
     "final": "remote"
@@ -50,11 +51,9 @@
       "type": "tun",
       "address": [
         "172.19.0.1/30",
-        "2001:0470:f9da:fdfa::1/64"
+        "fdfe:dcba:9876::1/126"
       ],
-      "stack": "gvisor",
-      "auto_route": true,
-      "strict_route": true
+      "auto_route": true
     }
   ],
   "outbounds": [
@@ -63,18 +62,20 @@
       "tag": "direct"
     },
     {
-      "type": "trojan",
+      "type": "hysteria2",
       "tag": "proxy",
       "server": "ganlanc.at",
-      "server_port": 443,
-      "password": "GANLANCAT",
+      "server_port": 8964,
+      "password": "HATATEAYA",
+      "obfs": {
+        "type": "salamander",
+        "password": "HATATEAYA"
+      },
+      "bbr_profile": "standard",
       "tls": {
         "enabled": true,
-        "server_name": "ganlanc.at"
-      },
-      "network": "tcp",
-      "multiplex": {
-        "enabled": true
+        "server_name": "ganlanc.at",
+        "insecure": false
       }
     }
   ],
@@ -83,19 +84,8 @@
     "default_domain_resolver": {
       "server": "local"
     },
+    "default_http_client": "rules-proxy",
     "rules": [
-      {
-        "protocol": "icmp",
-        "outbound": "direct"
-      },
-      {
-        "protocol": "udp",
-        "port": [
-          443
-        ],
-        "action": "reject",
-        "method": "drop"
-      },
       {
         "action": "sniff"
       },
@@ -104,26 +94,27 @@
         "action": "hijack-dns"
       },
       {
-        "ip_is_private": true,
+        "protocol": "icmp",
+        "action": "route",
         "outbound": "direct"
       },
       {
-        "domain_suffix": [
-          "gstatic.com"
-        ],
-        "outbound": "proxy"
+        "ip_is_private": true,
+        "action": "route",
+        "outbound": "direct"
       },
       {
-        "rule_set": [
-          "category-ads-all"
-        ],
+        "rule_set": ["category-ads-all"],
         "action": "reject"
       },
       {
-        "rule_set": [
-          "geosite-cn",
-          "geoip-cn"
-        ],
+        "domain_suffix": ["gstatic.com"],
+        "action": "route",
+        "outbound": "proxy"
+      },
+      {
+        "rule_set": ["geosite-cn", "geoip-cn"],
+        "action": "route",
         "outbound": "direct"
       },
       {
@@ -151,7 +142,8 @@
         "format": "binary",
         "url": "https://testingcf.jsdelivr.net/gh/SagerNet/sing-geoip@rule-set/geoip-cn.srs",
         "download_detour": "direct"
-      }
+      } 
     ]
   }
 }
+
