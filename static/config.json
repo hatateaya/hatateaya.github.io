@@ -64,8 +64,7 @@
     {
       "type": "hysteria2",
       "tag": "proxy",
-      "server": "ganlanc.at",
-      "server_port": 8964,
+      "server": "31.25.89.147",
       "password": "HATATEAYA",
       "obfs": {
         "type": "salamander",
@@ -74,10 +73,30 @@
       "bbr_profile": "standard",
       "tls": {
         "enabled": true,
-        "server_name": "ganlanc.at",
-        "insecure": false
-      }
+        "server_name": "speedtest.ganlanc.at",
+        "insecure": false,
+        "min_version": "1.3",
+        "max_version": "1.3",
+        "alpn": [
+          "h3"
+        ],
+        "ech": {
+          "enabled": true,
+          "config": [
+            "-----BEGIN ECH CONFIGS-----",
+            "AE/+DQBLAAAgACBATSfm3ai6UOEGqxZxNT0LJebzUhlByHLTsSuCJamIcAAMAAEA",
+            "AQABAAIAAQADABRzcGVlZHRlc3QuZ2FubGFuYy5hdAAA",
+            "-----END ECH CONFIGS-----"
+          ]
+        }
+      },
+      "server_ports": [
+        "64000:65535"
+      ],
+      "hop_interval": "30s",
+      "hop_interval_max": "60s"
     }
+    
   ],
   "route": {
     "auto_detect_interface": true,
