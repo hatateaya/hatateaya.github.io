@@ -5,8 +5,7 @@
   "experimental": {
     "cache_file": {
       "enabled": true,
-      "path": "cache.db",
-      "store_dns": true
+      "path": "cache.db"
     }
   },
   "http_clients": [
@@ -44,14 +43,14 @@
         "server": "local"
       }
     ],
-    "final": "remote"
+    "final": "remote",
+    "strategy": "ipv4_only"
   },
   "inbounds": [
     {
       "type": "tun",
       "address": [
-        "172.19.0.1/30",
-        "fdfe:dcba:9876::1/126"
+        "172.19.0.1/30"
       ],
       "auto_route": true
     }
@@ -95,8 +94,7 @@
       ],
       "hop_interval": "30s",
       "hop_interval_max": "60s"
-    }
-    
+    }    
   ],
   "route": {
     "auto_detect_interface": true,
